@@ -121,14 +121,14 @@ pub use crate::serde::{deserialize, serialize};
 mod buffer;
 mod code;
 mod code_impls;
-mod encoding;
+pub mod encoding;
 mod guard;
 mod nightly;
-mod read;
+pub mod read;
 mod register_buffer;
 mod word;
 mod word_buffer;
-mod write;
+pub mod write;
 
 #[doc(hidden)]
 pub mod __private;
@@ -254,7 +254,7 @@ impl E {
     }
 }
 
-type Result<T> = std::result::Result<T, Error>;
+pub type Result<T> = std::result::Result<T, Error>;
 
 impl Display for Error {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
